@@ -29,3 +29,12 @@ Summarize the results of the machine learning models, and include a recommendati
 * Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
 
 If you do not recommend any of the models, please justify your reasoning.
+
+Accuracy is 0.99, which is a very high accuracy. However, if the dataset is imbalanced, even high accuracy may not indicate good predictive power for the High-risk Loan
+The precision of Healthy Loan and High-risk Loan are 1.00 and 0.85, respectively, indicating that there were more errors in predicting High-risk Loan.
+The recall of Healthy Loan and High-risk Loan are 0.99 and 0.91, respectively. This means that there were cases where the model missed High-risk Loan, resulting in 56 False negatives.
+Looking at the given results, the support for Healthy Loan (normal loans) is 18765, while that for High-risk Loan (risky loans) is 619. Therefore, the dataset is imbalanced, with Healthy Loan having significantly more data than High-risk Loan. As a result, the model shows very high precision and recall for Healthy Loan, but low precision and recall for High-risk Loan.
+In particular, in the case of loans, predicting high-risk loans is important to prevent losses, so the recall value is crucial.
+
+
+To solve the class imbalance problem, it is necessary to resample using an oversampling technique.
